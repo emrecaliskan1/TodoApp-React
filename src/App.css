@@ -1,0 +1,169 @@
+/* Genel Stil */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #2c2c38; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+  color: #e0e0e0;
+}
+
+.App {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #2c2c38;
+  margin-top: 50px;
+}
+
+/* Ana Kutu */
+.main {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #3b3b4f;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Todo Ekleme Alanı */
+.todo-create {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Input Alanı */
+.todo-input {
+  width: 95%;
+  padding: 10px;
+  border: 1px solid #8a75ff;
+  border-radius: 6px;
+  background: #2c2c38;
+  color: white;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.todo-input:focus {
+  border-color: #8a75ff;
+  box-shadow: 0px 0px 8px rgba(138, 117, 255, 0.6);
+}
+
+/* Todo Oluştur Butonu */
+.todo-create-button {
+  margin-top: 10px;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  background-color: #6c5ce7; 
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.todo-create-button:hover {
+  background-color: #5a4ec7; 
+  transform: scale(1.05);
+}
+
+/* Todo Öğesi */
+.todo-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #45455c; /* Grimsi Mor */
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-top: 12px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.todo-item:hover {
+  background: #5a5a7d; /* Biraz daha açık mor */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px); /* Hafif yukarı kalkma efekti */
+}
+
+
+/* Todo İçeriği */
+.todo-content {
+  flex: 1;
+  font-size: 16px;
+  color: #fff;
+  word-wrap: break-word;
+}
+
+/* Todo Butonları */
+.todo-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* İkon Stilleri */
+.todo-icon {
+  font-size: 22px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.todo-icon:hover {
+  transform: scale(1.2);
+}
+
+
+.todo-icon.remove {
+  color: #880808; 
+}
+
+.todo-icon.edit {
+  color: #b6a725; 
+}
+
+.todo-icon.check {
+  color: #046719;
+}
+
+/* Todo Eklenirken Animasyon */
+.todo-item.added {
+  transform: scale(1.1);
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+/* Todo Silinirken Animasyon */
+.todo-item.removed {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+/* Fade-in Animasyonu */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
